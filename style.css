@@ -1,0 +1,156 @@
+ 
+:root {
+  --primary-color: #00aaff;
+  --accent-color: #ffb6c1;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-image: url('images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  position: relative;
+  
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+  padding: 100px 20px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 20px;
+}
+
+.article {
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.article:hover {
+  transform: scale(1.05);
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.social-icons img {
+  width: 200px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+svg{
+    fill: green;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+  nav ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+}
+
+  nav.active ul {
+    display: flex;
+}
+
+.menu-toggle {
+    display: block;
+}
+}
